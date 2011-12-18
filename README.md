@@ -1,5 +1,5 @@
-fancy_oauth2
-============
+Overview
+--------
 
 This is a Rails-3.1 engine that puts your OAuth2 negotiation into a Fancybox popup window.
 It grabs OAuth2 tokens into hidden form fields for compatibility with rails form and form_tag helpers.
