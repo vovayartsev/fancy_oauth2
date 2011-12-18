@@ -1,3 +1,11 @@
+WARNING
+-------
+
+**It looks like OAuth2 negotiation can't be performed within an iframe.**
+**At least, Google's one can't.**
+**Please don't use this code untill I find a workaround or fall back to a standard popup window.**
+
+
 Overview
 --------
 
