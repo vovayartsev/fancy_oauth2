@@ -10,7 +10,7 @@ Here's a demo app: http://fancy-oauth2-demo.herokuapp.com/
 Compatibility
 -------------
 
-This gem is compatible with **Rails-3.1** only. It will not work on Rails 3.0 without the Asset Pipeline. 
+This gem is compatible with **Rails-3.1** only. It will not work on Rails 3.0 without Asset Pipeline. 
 
 This gem has been tested with Google OAuth2 only. It might not work with other providers because of some google-specific 
 login hardcoded. Please place a ticket if you find such incompatibility.
