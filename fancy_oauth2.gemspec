@@ -22,4 +22,6 @@ Gem::Specification.new do |s|
   # s.add_development_dependency "rspec"
   s.add_development_dependency "rails", "~> 3.1.0"
   s.add_runtime_dependency "rails", "~> 3.1.0"
+  s.add_runtime_dependency "haml-rails"
+  s.add_runtime_dependency "oauth2"
 end
