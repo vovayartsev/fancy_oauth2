@@ -2,3 +2,6 @@
 
 %p We were unable to authenticate you using OAuth2 protocol
 
+- if @error.present?
+  %p= simple_format(@error)
+
