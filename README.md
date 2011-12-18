@@ -3,8 +3,9 @@ Overview
 
 This is a Rails-3.1 engine that puts your OAuth2 negotiation into a Fancybox popup window.
 It grabs OAuth2 tokens into hidden form fields for compatibility with rails form and form_tag helpers.
+This is usefull if you want end-user to confirm access to his/her Google account while filling in some forms in your app.
 
-TODO: setup a demo app
+Here's a demo app: http://fancy-oauth2-demo.herokuapp.com/
 
 Compatibility
 -------------
