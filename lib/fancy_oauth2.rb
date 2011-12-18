@@ -1,4 +1,8 @@
 require 'fancy_oauth2/version'
+
+require 'haml-rails'
+require 'oauth2'
+
 require 'fancy_oauth2/rails/engine'
 require 'fancy_oauth2/rails/railtie'
 

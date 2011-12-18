@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Vladimir Yartsev"]
   s.email       = ["vovayartsev@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{Put oauth2 negotiation into a fancybox}
+  s.summary     = %q{Puts oauth2 negotiation into a fancybox}
   s.description = %q{Adds controller/views/styles/js to put all your oauth2 negotiation into a fancybox and }
 
   #s.rubyforge_project = "fancy_oauth2"
@@ -19,9 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib", "app/helpers", "app/controllers"]
 
   # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  s.add_development_dependency "rails", "~> 3.1.0"
-  s.add_runtime_dependency "rails", "~> 3.1.0"
-  s.add_runtime_dependency "haml-rails"
-  s.add_runtime_dependency "oauth2"
+  s.add_dependency "rails", "~> 3.1.0"
+  s.add_dependency "haml-rails"
+  s.add_dependency "oauth2"
 end
