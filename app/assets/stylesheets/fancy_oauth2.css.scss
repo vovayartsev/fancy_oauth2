@@ -21,11 +21,13 @@
         text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
         margin: 10px; 
         border-color: #C6518C #C6518C #A02A65;
+        background-color: #CC596B;
         background: -moz-linear-gradient(center top , #CC596B, #A33042) repeat scroll 0 0 transparent;
     }
 
     .auth-link.success {
         border-color: #51C68C #51C68C #2AA065;
+        background-color: #59CC6B;
         background: -moz-linear-gradient(center top , #59CC6B, #30A342) repeat scroll 0 0 transparent;
     }
 
