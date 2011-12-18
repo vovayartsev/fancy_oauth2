@@ -4,17 +4,27 @@
 
 .fancy-oauth2 {
 
-  .auth-link {
-    display: inline-block;
-    background-color: #722;
-    border-radius: 5px;
-    padding: 10px;
-    font-weight: white;
-    color: white;
-  }
+    .auth-link {
+        padding: 5px 10px;
+        border: 1px solid #D4D4D4;
+        border-radius: 3px 3px 3px 3px;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Helvetica,arial,freesans,clean,sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+        white-space: nowrap;
+        color: #FFFFFF;
+        text-decoration: none;
+        text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+        margin: 10px; 
+        border-color: #C6518C #C6518C #A02A65;
+        background: -moz-linear-gradient(center top , #CC596B, #A33042) repeat scroll 0 0 transparent;
+    }
 
-  .auth-link.success {
-    background-color: #272;
-  }
+    .auth-link.success {
+        border-color: #51C68C #51C68C #2AA065;
+        background: -moz-linear-gradient(center top , #59CC6B, #30A342) repeat scroll 0 0 transparent;
+    }
 
 }
