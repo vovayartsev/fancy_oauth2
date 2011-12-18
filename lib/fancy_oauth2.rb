@@ -37,7 +37,7 @@ module FancyOauth2
   def self.callback_url_builder
     lambda{ |request|
       host_and_port = request.host
-      host_and_port += ":#{request.port}" if request.port
+      host_and_port += ":#{request.port}" if request.port and request.port.to_i != 80
       result = "#{request.protocol}#{host_and_port}/fancy_oauth2/callback"
     }
   end
