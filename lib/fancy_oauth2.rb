@@ -7,8 +7,6 @@ require 'fancy_oauth2/rails/engine'
 require 'fancy_oauth2/rails/railtie'
 
 require 'fancy_oauth2/config'
-require 'fancy_oauth2_controller'
-require 'fancy_oauth2_helper'
 
 ActionController::Base.class_eval do
   helper :fancy_oauth2
