@@ -1,17 +1,13 @@
 WARNING
 -------
 
-**It looks like OAuth2 negotiation can't be performed within an iframe.**
-**At least, Google's one can't.**
-**Please don't use this code untill I find a workaround or fall back to a standard popup window.**
-
+**This is still a work in progress**
 
 Overview
 --------
 
-This is a Rails-3.1 engine that puts your OAuth2 negotiation into a Fancybox popup window.
-It grabs OAuth2 tokens into hidden form fields for compatibility with rails form and form_tag helpers.
-This is usefull if you want end-user to confirm access to his/her Google account while filling in some forms in your app.
+This is a Rails-3.1 engine that puts your OAuth2 negotiation into a popup window. 
+While it doesn't actually use Fancybox (Google's OAuth2 doesn't work in it), I tried to simulate the Fancybox experience.
 
 Here's a demo app: http://fancy-oauth2-demo.herokuapp.com/
 
