@@ -46,7 +46,7 @@ class FancyOauth2Handler
             if @popup.closed
                 $('#fancy-oauth2-dark-cloak').fadeOut()
             else
-                @popup.focus() if window.focus 
+                @popup.window.focus() if window.focus
                 setTimeout(this.onTimer, 300)
 
 

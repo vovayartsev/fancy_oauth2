@@ -16,10 +16,4 @@ module FancyOauth2Helper
     end
   end
 
-  def yandex_fancybox_include_tag 
-    js = javascript_include_tag("http://yandex.st/jquery/fancybox/1.3.4/jquery.fancybox.min.js")
-    style = stylesheet_link_tag("http://yandex.st/jquery/fancybox/1.3.4/jquery.fancybox.css")
-    style + "\n" + js
-  end
-
 end
