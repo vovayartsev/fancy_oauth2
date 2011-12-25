@@ -50,7 +50,9 @@ This will add a hidden input to your form, which will contain authentication tok
 After you submit your form, you'll be able to access your token values (JSON-encoded) like this:
 
     json_string = params[:field_name]   # => '{"access_token":"....","expires_in":3600,"refresh_token":"....."}'
-    hash = JSON.load(json_string).symbolize_keys   # =>  {:access_token=>"...", :expires_in=>3600, :refresh_token=>"..."} 
+    if json_string.present?    # this will be a blank string if the user didn't grant the permissions 
+        hash = JSON.load(json_string).symbolize_keys   # =>  {:access_token=>"...", :expires_in=>3600, :refresh_token=>"..."} 
+    end
 
 Customization
 -------------
