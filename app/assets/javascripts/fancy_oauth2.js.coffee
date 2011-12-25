@@ -4,6 +4,9 @@ class FancyOauth2Handler
     constructor: (@field)->
         @popup = null
         @popup_name = "Fancy OAuth2"
+        $('#fancy-oauth2-dark-cloak').live "click", =>
+            console.log "reveal the popup"
+            this.showPopup()
         if $("#fancy-oauth2-dark-cloak").length == 0
             $("html body").append('<div id="fancy-oauth2-dark-cloak" style="display:none"> <!-- cloak --> </div>')
 
@@ -11,6 +14,7 @@ class FancyOauth2Handler
         url = @field.find("a.auth-link").attr("href")
         $('#fancy-oauth2-dark-cloak').fadeIn()
         @popup = window.open(url, @popup_name, 'left=100,top=100,height=600,width=700')
+        @popup.focus() if window.focus
         this.onTimer()  # just to focus the window and schedule the timer
 
     hidePopup: ->
@@ -46,14 +50,11 @@ class FancyOauth2Handler
             if @popup.closed
                 $('#fancy-oauth2-dark-cloak').fadeOut()
             else
-                @popup.window.focus() if window.focus
                 setTimeout(this.onTimer, 300)
 
 
 jQuery -> 
     $(".fancy-oauth2 a.auth-link").live "click", ->
-        #window.active_fancy_oauth2 = $(this).parent()
-        #$.fancybox {href: $(this).attr("href"), type: "iframe"}
         handler = new FancyOauth2Handler($(this).parent())
         handler.showPopup()
         return false
