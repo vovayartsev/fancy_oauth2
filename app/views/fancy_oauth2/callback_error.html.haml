@@ -5,6 +5,5 @@
 - if @error.present?
   %p= simple_format(@error)
 
-= content_tag :div, :id => "auth-token", :data => {:auth => nil, :error => @error}, :style => "display: none;" do 
-  // nothing
+= render :partial => "hidden_form"
 

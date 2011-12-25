@@ -2,6 +2,4 @@
 
 %p Now close this window to return to your application
 
-= content_tag :div, :id => "auth-token", :data => {:auth => @auth, :error => nil}, :style => "display: none;" do 
-  // This block contains auth data
-
+= render :partial => "hidden_form"

@@ -24,14 +24,12 @@ class FancyOauth2Handler
 
     updateAuthLink: (auth) ->
         console.log "updateAuthLink: " + auth
-        if auth? and auth.access_token?
-            @field.find("input.access-token").attr("value", auth.access_token)
-            @field.find("input.expires-in").attr("value", auth.expires_in)
-            @field.find("input.refresh-token").attr("value", auth.refresh_token)
+        if auth
+            @field.find("input.token").attr("value", auth)
             @field.find("a.auth-link").addClass("success")
         else
-            # resetting fancy_oauth2 field to "failed" state
-            @field.find("input").attr("value", null)
+            # resetting fancy_oauth2 field to "not authorized" state
+            @field.find("input.token").attr("value", null)
             @field.find("a.auth-link").removeClass("success")
 
 
@@ -39,16 +37,17 @@ class FancyOauth2Handler
         if @popup?
             # checking for oauth2 results div
             result = try
-                $("#auth-token", @popup.document)
+                $("#fancy-oauth2-token", @popup.document)
             catch e
                 null
-            if result? && result.length > 0 # negotoation finished
-                this.updateAuthLink result.data("auth")
+            if result? && result.length > 0 # negotiation finished
+                this.updateAuthLink result.find("input[name=token]").attr("value")
+                console.log result.data("error") if result.data("error")
                 this.hidePopup()
-        # need another iteration?
-        if @popup 
-            if @popup.closed
+        if @popup # then we need another iteration
+            if @popup.closed  # cancelled by the user
                 $('#fancy-oauth2-dark-cloak').fadeOut()
+                @popup = null
             else
                 setTimeout(this.onTimer, 300)
 
