@@ -39,7 +39,7 @@ In app/assets/javascripts/application.js
 
 In your view (inside a form):
 
-    <%= form_tag ,,, %>
+    <%= form_tag .... %>
       <%= fancy_oauth2_tag :field_name, field_value
       ....
 
