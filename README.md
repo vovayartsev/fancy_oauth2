@@ -40,7 +40,7 @@ In app/assets/javascripts/application.js
 In your view (inside a form):
 
     <%= form_tag .... %>
-      <%= fancy_oauth2_tag :field_name, field_value
+      <%= fancy_oauth2_tag :field_name, current_field_value %>
       ....
 
 This will add a hidden input to your form, which will contain authentication token (json-encoded):
