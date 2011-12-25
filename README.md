@@ -7,7 +7,10 @@ Overview
 --------
 
 This is a Rails-3.1 engine that puts your OAuth2 negotiation into a popup window. 
-While it doesn't actually use Fancybox (Google's OAuth2 doesn't work in it), I tried to simulate the Fancybox experience.
+While it doesn't actually use Fancybox, it simulates the user experience of Fancybox.
+
+This gem was extracted from a report delivery application by [VizMetrics](http://vizmetrics.com/). 
+Thanks to VizMetrics for letting me publish it here.
 
 Here's a demo app: http://fancy-oauth2-demo.herokuapp.com/
 
@@ -22,7 +25,32 @@ login hardcoded. Please place a ticket if you find such incompatibility.
 Installation
 ------------
 
-TBD
+In a Gemfile:
+
+    gem 'fancy_oauth2', :git => 'git@github.com:vovayartsev/fancy_oauth2.git'
+    
+In app/assets/stylesheets/application.css
+
+    *= require fancy_oauth2
+
+In app/assets/javascripts/application.js
+
+    //= require fancy_oauth2
+
+In your view (inside a form):
+
+    <%= form_tag ,,, %>
+      <%= fancy_oauth2_tag :field_name, field_value
+      ....
+
+This will add a hidden input to your form, which will contain authentication token (json-encoded):
+    
+    <input type="hidden" name="field_name" value="<token_value>">
+    
+After you submit your form, you'll be able to access your token values (JSON-encoded) like this:
+
+    json_string = params[:field_name]   # => '{"access_token":"....","expires_in":3600,"refresh_token":"....."}'
+    hash = JSON.load(json_string).symbolize_keys   # =>  {:access_token=>"...", :expires_in=>3600, :refresh_token=>"..."} 
 
 Customization
 -------------
@@ -32,8 +60,7 @@ TBD
 Testing
 -------
 
-TBD, demo app.
-
+The specs are provided as a part of the demo app - see [fancy_oauth2_demo](https://github.com/vovayartsev/fancy_oauth2_demo)
 
 Contributions
 -------------
@@ -46,10 +73,10 @@ Contributions are very welcome. Here's my vision for the futher project developm
 * Refactoring 
  
 
-
 Credits
 -------
 
-* http://fancybox.net/
+* http://vizmetrics.com/
 * https://github.com/intridea/oauth2
+* http://fancybox.net/
 
