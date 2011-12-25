@@ -54,6 +54,14 @@ After you submit your form, you'll be able to access your token values (JSON-enc
         hash = JSON.load(json).symbolize_keys  # =>  {:access_token=>"...", :expires_in=>3600, :refresh_token=>"..."} 
     end
 
+The actual token value is not visible to the end-user. Instead there's a colored button which is red when the hidden field is
+blank, and green when there'sa token in it. The initial button color depends on the value that you pass to 
+fancy_oauth2_tag call. If you don't want to expose the existing token value in HTML code, just pass some 
+placeholder value, like a series of asterics. The client-side code doesn't parse this value - it displays a 
+green button for any non-empty value provided. If you use this tecnique, be prepared to receive the
+placeholder value back when the user submits the form.
+
+
 Customization
 -------------
 
