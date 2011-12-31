@@ -9,6 +9,7 @@ class FancyOauth2Controller < ActionController::Base
           @auth = {
             access_token: token.token, 
             expires_in: token.expires_in, 
+            expires_at: token.expires_at, 
             refresh_token: token.refresh_token
           }.to_json
           render 'callback_success', :layout => "fancy_oauth2_popup"
