@@ -31,6 +31,8 @@ class FancyOauth2Handler
             # resetting fancy_oauth2 field to "not authorized" state
             @field.find("input.token").attr("value", null)
             @field.find("a.auth-link").removeClass("success")
+        @field.change()
+        
 
 
     onTimer: => 
