@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib", "app/helpers", "app/controllers"]
 
   # specify any dependencies here; for example:
-  s.add_dependency "rails", "~> 3.1.0"
+  s.add_dependency "rails", "> 3.1.0"
   s.add_dependency "haml-rails"
   s.add_dependency "oauth2"
 end
