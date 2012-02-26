@@ -5,7 +5,7 @@ class FancyOauth2Handler
         @popup = null
         @popup_name = "fancy_oauth2"
         $('#fancy-oauth2-dark-cloak').live "click", =>
-            console.log "reveal the popup"
+            #console.log "reveal the popup"
             this.showPopup()
         if $("#fancy-oauth2-dark-cloak").length == 0
             $("html body").append('<div id="fancy-oauth2-dark-cloak" style="display:none"> <!-- cloak --> </div>')
@@ -23,7 +23,7 @@ class FancyOauth2Handler
         @popup = null
 
     updateAuthLink: (auth) ->
-        console.log "updateAuthLink: " + auth
+        #console.log "updateAuthLink: " + auth
         if auth
             @field.find("input.token").attr("value", auth)
             @field.find("a.auth-link").addClass("success")
@@ -44,7 +44,7 @@ class FancyOauth2Handler
                 null
             if result? && result.length > 0 # negotiation finished
                 this.updateAuthLink result.find("input[name=token]").attr("value")
-                console.log result.data("error") if result.data("error")
+                #console.log result.data("error") if result.data("error")
                 this.hidePopup()
         if @popup # then we need another iteration
             if @popup.closed  # cancelled by the user
