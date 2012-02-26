@@ -3,7 +3,7 @@
 class FancyOauth2Handler
     constructor: (@field)->
         @popup = null
-        @popup_name = "Fancy OAuth2"
+        @popup_name = "fancy_oauth2"
         $('#fancy-oauth2-dark-cloak').live "click", =>
             console.log "reveal the popup"
             this.showPopup()
